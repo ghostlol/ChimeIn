@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Input, InputGroup, InputRightElement, VStack } from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, InputGroup,  InputRightElement, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useToast } from '@chakra-ui/react';
 import axios from 'axios';
@@ -65,6 +65,7 @@ const Login = () => {
                 <FormLabel>Email</FormLabel>
                     <Input 
                     placeholder='Enter Your Email'
+                    value={email}
                     onChange={(e)=>setEmail(e.target.value)}
                     />
             </FormControl>
@@ -74,6 +75,7 @@ const Login = () => {
                     <Input 
                     type={show ? "text":"password"}
                     placeholder='Enter Your Password'
+                    value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                     />
                     <InputRightElement width="4.5rem">
