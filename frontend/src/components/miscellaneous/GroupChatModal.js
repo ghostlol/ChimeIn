@@ -133,11 +133,11 @@ const GroupChatModal = ({ children }) => {
                 </FormControl>
                 <Box w="100%" display="flex" flexWrap="wrap">
                 {selectedUsers.map((u)=>(
-                  <UserBadgeItem key={user._id} user={u} handleFunction={()=>handleDelete(u)} />
+                  <UserBadgeItem key={u._id} user={u} handleFunction={()=>handleDelete(u)} />
                 ))}
                 </Box>
                 {loading?<div>Loading...</div>:(
-                  searchResult?.slice(0,4).map(user => (
+                  searchResult?.slice(0,4).map((user) => (
                     <UserListItem key={user._id} user={user} handleFunction={()=>handleGroup(user)}/>
                   ))
                 )}

@@ -59,7 +59,7 @@ const SideDrawer = () => {
         }
     };
 
-    const accesChat = async (userId) => {
+    const accessChat = async (userId) => {
         try {
             setLoadingChat(true);
             const config = {
@@ -103,7 +103,7 @@ const SideDrawer = () => {
         >
         <Tooltip label="Search Users to chat" hasArrow placement='bottom-end'>
             <Button variant='ghost' onClick={onOpen}>
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             <Text display={{base:"none", md:"flex"}} px='4'>Search User</Text>
             </Button>
         </Tooltip>
@@ -145,7 +145,7 @@ const SideDrawer = () => {
                     <UserListItem
                     key={user._id}
                     user={user}
-                    handleFunction={()=>accesChat(user._id)}
+                    handleFunction={()=>accessChat(user._id)}
                     />
                 ))
             )}

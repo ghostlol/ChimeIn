@@ -7,7 +7,7 @@ import ChatLoading from './ChatLoading';
 import { getSender } from '../config/ChatLogics';
 import GroupChatModal from './miscellaneous/GroupChatModal';
 
-const MyChats = () => {
+const MyChats = ({ fetchAgain }) => {
   const [ loggedUser, setLoggedUser ] = useState();
   const {selectedChat, setSelectedChat, user, chats, setChats} = ChatState();
 
@@ -36,7 +36,7 @@ const MyChats = () => {
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
-  },[]);
+  },[fetchAgain]);
   return (
   <Box
     display={{base: selectedChat ? "none" : "flex", md:"flex"}}
@@ -72,7 +72,7 @@ const MyChats = () => {
       display="flex"
       flexDir="column"  
       p={3}
-      bg="#F8F8F8"
+      bg="#f8f8f8"
       w="100%"
       h="100%"
       borderRadius="lg"
@@ -84,7 +84,7 @@ const MyChats = () => {
             <Box
              onClick={()=>setSelectedChat(chat)}
              cursor="pointer"
-             bg={selectedChat === chat ? "#38B2AC": "E8E8E8"}
+             bg={selectedChat === chat ? "#38B2AC": "#e8e8e8"}
              color={selectedChat === chat? "white": "black"}
              px={3}
              py={2}
